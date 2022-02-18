@@ -5,7 +5,11 @@ brew install prometheus
 ```
 2.启动`Prometheus`
 ```shell
-prometheus --config.file=/prometheus-study/src/main/resources/prometheus.yml
+nohup prometheus --web.enable-lifecycle --config.file=/Users/admin/Downloads/study/prometheus-study/src/main/resources/prometheus.yml &
+```
+tips：关闭`Prometheus`
+```shell
+curl -X POST http://localhost:9090/-/quit
 ```
 3.安装`Grafana`
 ```shell
