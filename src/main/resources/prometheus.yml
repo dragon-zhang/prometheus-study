@@ -5,9 +5,14 @@ scrape_configs:
   - job_name: "prometheus"
     metrics_path: "/metrics"
     static_configs:
-      - targets: ["localhost:9090"]
+      # 配置的端口是9090，prometheus会采集自己的数据
+      - targets: [ "localhost:9090" ]
+  - job_name: "shenyu-bootstrap"
+    metrics_path: "/metrics"
+    static_configs:
+      - targets: [ "localhost:9190" ]
   # 此应用的数据采集
   - job_name: "prometheus-study"
     metrics_path: "/actuator/prometheus"
     static_configs:
-      - targets: ["localhost:8080"]
+      - targets: [ "localhost:8080" ]
