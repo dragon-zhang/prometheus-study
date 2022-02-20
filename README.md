@@ -19,6 +19,10 @@ brew install grafana
 ```shell
 brew services start grafana
 ```
+关闭`Grafana`
+```shell
+brew services stop grafana
+```
 5.登录`http://127.0.0.1:3000`，用户名/密码：`admin/admin`
 
 6.在`Grafana`上新增`Prometheus`的数据源，配置的url为`http://127.0.0.1:9090`
